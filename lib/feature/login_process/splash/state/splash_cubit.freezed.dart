@@ -12,17 +12,11 @@ part of 'splash_cubit.dart';
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
-mixin _$SplashState implements DiagnosticableTreeMixin {
+mixin _$SplashState {
 
 
 
 
-@override
-void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-  properties
-    ..add(DiagnosticsProperty('type', 'SplashState'))
-    ;
-}
 
 @override
 bool operator ==(Object other) {
@@ -34,7 +28,7 @@ bool operator ==(Object other) {
 int get hashCode => runtimeType.hashCode;
 
 @override
-String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
+String toString() {
   return 'SplashState()';
 }
 
@@ -204,7 +198,7 @@ return error(_that.message);case _:
 /// @nodoc
 
 
-class _Initial with DiagnosticableTreeMixin implements SplashState {
+class _Initial implements SplashState {
   const _Initial();
   
 
@@ -212,12 +206,6 @@ class _Initial with DiagnosticableTreeMixin implements SplashState {
 
 
 
-@override
-void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-  properties
-    ..add(DiagnosticsProperty('type', 'SplashState.initial'))
-    ;
-}
 
 @override
 bool operator ==(Object other) {
@@ -229,7 +217,7 @@ bool operator ==(Object other) {
 int get hashCode => runtimeType.hashCode;
 
 @override
-String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
+String toString() {
   return 'SplashState.initial()';
 }
 
@@ -242,7 +230,7 @@ String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
 /// @nodoc
 
 
-class _Checking with DiagnosticableTreeMixin implements SplashState {
+class _Checking implements SplashState {
   const _Checking();
   
 
@@ -250,12 +238,6 @@ class _Checking with DiagnosticableTreeMixin implements SplashState {
 
 
 
-@override
-void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-  properties
-    ..add(DiagnosticsProperty('type', 'SplashState.checking'))
-    ;
-}
 
 @override
 bool operator ==(Object other) {
@@ -267,7 +249,7 @@ bool operator ==(Object other) {
 int get hashCode => runtimeType.hashCode;
 
 @override
-String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
+String toString() {
   return 'SplashState.checking()';
 }
 
@@ -280,7 +262,7 @@ String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
 /// @nodoc
 
 
-class _Success with DiagnosticableTreeMixin implements SplashState {
+class _Success implements SplashState {
   const _Success();
   
 
@@ -288,12 +270,6 @@ class _Success with DiagnosticableTreeMixin implements SplashState {
 
 
 
-@override
-void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-  properties
-    ..add(DiagnosticsProperty('type', 'SplashState.success'))
-    ;
-}
 
 @override
 bool operator ==(Object other) {
@@ -305,7 +281,7 @@ bool operator ==(Object other) {
 int get hashCode => runtimeType.hashCode;
 
 @override
-String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
+String toString() {
   return 'SplashState.success()';
 }
 
@@ -318,7 +294,7 @@ String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
 /// @nodoc
 
 
-class _UpdateRequired with DiagnosticableTreeMixin implements SplashState {
+class _UpdateRequired implements SplashState {
   const _UpdateRequired({required this.currentVersion, required this.minimumVersion});
   
 
@@ -332,12 +308,6 @@ class _UpdateRequired with DiagnosticableTreeMixin implements SplashState {
 _$UpdateRequiredCopyWith<_UpdateRequired> get copyWith => __$UpdateRequiredCopyWithImpl<_UpdateRequired>(this, _$identity);
 
 
-@override
-void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-  properties
-    ..add(DiagnosticsProperty('type', 'SplashState.updateRequired'))
-    ..add(DiagnosticsProperty('currentVersion', currentVersion))..add(DiagnosticsProperty('minimumVersion', minimumVersion));
-}
 
 @override
 bool operator ==(Object other) {
@@ -349,7 +319,7 @@ bool operator ==(Object other) {
 int get hashCode => Object.hash(runtimeType,currentVersion,minimumVersion);
 
 @override
-String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
+String toString() {
   return 'SplashState.updateRequired(currentVersion: $currentVersion, minimumVersion: $minimumVersion)';
 }
 
@@ -392,7 +362,7 @@ as String,
 /// @nodoc
 
 
-class _Error with DiagnosticableTreeMixin implements SplashState {
+class _Error implements SplashState {
   const _Error({required this.message});
   
 
@@ -405,12 +375,6 @@ class _Error with DiagnosticableTreeMixin implements SplashState {
 _$ErrorCopyWith<_Error> get copyWith => __$ErrorCopyWithImpl<_Error>(this, _$identity);
 
 
-@override
-void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-  properties
-    ..add(DiagnosticsProperty('type', 'SplashState.error'))
-    ..add(DiagnosticsProperty('message', message));
-}
 
 @override
 bool operator ==(Object other) {
@@ -422,7 +386,7 @@ bool operator ==(Object other) {
 int get hashCode => Object.hash(runtimeType,message);
 
 @override
-String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
+String toString() {
   return 'SplashState.error(message: $message)';
 }
 

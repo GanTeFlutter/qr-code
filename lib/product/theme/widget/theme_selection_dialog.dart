@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:qrcode_akillisletme/product/init/language/locale_keys.g.dart';
 import 'package:qrcode_akillisletme/product/theme/app_theme_colors.dart';
 import 'package:qrcode_akillisletme/product/theme/app_theme_variant.dart';
 import 'package:qrcode_akillisletme/product/theme/state/theme/theme_cubit.dart';
@@ -23,7 +25,7 @@ class ThemeSelectionDialog extends StatelessWidget {
     final themeState = context.watch<ThemeCubit>().state;
     return AlertDialog(
       title: Text(
-        'Choose Theme',
+        LocaleKeys.theme_chooseTheme.tr(),
         style: TextStyle(fontSize: context.rf(22)),
       ),
       content: SizedBox(
@@ -77,21 +79,61 @@ class _ThemeModeSelector extends StatelessWidget {
     final cs = Theme.of(context).colorScheme;
 
     return SegmentedButton<ThemeMode>(
-      segments: const [
+      showSelectedIcon: false,
+      segments: [
         ButtonSegment(
           value: ThemeMode.light,
-          icon: Icon(Icons.light_mode_rounded),
-          label: Text('Light'),
+          label: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.light_mode_rounded, size: context.r(16)),
+              SizedBox(width: context.r(4)),
+              Flexible(
+                child: Text(
+                  LocaleKeys.theme_light.tr(),
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(fontSize: context.rf(12)),
+                ),
+              ),
+            ],
+          ),
         ),
         ButtonSegment(
           value: ThemeMode.system,
-          icon: Icon(Icons.settings_brightness_rounded),
-          label: Text('System'),
+          label: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.settings_brightness_rounded, size: context.r(16)),
+              SizedBox(width: context.r(4)),
+              Flexible(
+                child: Text(
+                  LocaleKeys.theme_system.tr(),
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(fontSize: context.rf(12)),
+                ),
+              ),
+            ],
+          ),
         ),
         ButtonSegment(
           value: ThemeMode.dark,
-          icon: Icon(Icons.dark_mode_rounded),
-          label: Text('Dark'),
+          label: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.dark_mode_rounded, size: context.r(16)),
+              SizedBox(width: context.r(4)),
+              Flexible(
+                child: Text(
+                  LocaleKeys.theme_dark.tr(),
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(fontSize: context.rf(12)),
+                ),
+              ),
+            ],
+          ),
         ),
       ],
       selected: {currentMode},
@@ -99,6 +141,7 @@ class _ThemeModeSelector extends StatelessWidget {
         context.read<ThemeCubit>().setThemeMode(selected.first);
       },
       style: ButtonStyle(
+        visualDensity: VisualDensity.compact,
         backgroundColor: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.selected)) {
             return cs.primaryContainer;
@@ -162,7 +205,7 @@ class _VariantCard extends StatelessWidget {
             ),
             SizedBox(height: context.r(8)),
             Text(
-              variant.label,
+              variant.localeKey.tr(),
               style: TextStyle(
                 fontSize: context.rf(13),
                 fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,

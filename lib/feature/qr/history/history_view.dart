@@ -7,6 +7,7 @@ import 'package:qrcode_akillisletme/feature/qr/history/widget/history_empty_view
 import 'package:qrcode_akillisletme/feature/qr/history/widget/history_list_tile.dart';
 import 'package:qrcode_akillisletme/product/init/language/locale_keys.g.dart';
 import 'package:qrcode_akillisletme/product/navigation/app_router.dart';
+import 'package:qrcode_akillisletme/product/service/service_locator.dart';
 import 'package:qrcode_akillisletme/product/utils/responsive_extension.dart';
 
 class HistoryView extends StatelessWidget {
@@ -15,7 +16,8 @@ class HistoryView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => HistoryCubit()..loadHistory(),
+      create: (_) =>
+          HistoryCubit(historyService: locator.historyService)..loadHistory(),
       child: const _HistoryBody(),
     );
   }
@@ -26,7 +28,6 @@ class _HistoryBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.locale;
     final cs = Theme.of(context).colorScheme;
 
     return Scaffold(
@@ -119,23 +120,33 @@ class _HistoryBody extends StatelessWidget {
                   return const HistoryEmptyView();
                 }
 
-                return ListView.builder(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: context.r(16),
-                    vertical: context.r(4),
-                  ),
-                  itemCount: items.length,
-                  itemBuilder: (context, index) {
-                    final item = items[index];
-                    return HistoryListTile(
-                      item: item,
-                      onDelete: () => context
-                          .read<HistoryCubit>()
-                          .deleteItem(item.historyId),
-                      onTap: () =>
-                          CreateQrRoute($extra: item).push<void>(context),
-                    );
+                return NotificationListener<ScrollNotification>(
+                  onNotification: (notification) {
+                    if (notification is ScrollEndNotification &&
+                        notification.metrics.extentAfter < 200) {
+                      context.read<HistoryCubit>().loadMore();
+                    }
+                    return false;
                   },
+                  child: ListView.builder(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: context.r(16),
+                      vertical: context.r(4),
+                    ),
+                    itemExtent: 80,
+                    itemCount: items.length,
+                    itemBuilder: (context, index) {
+                      final item = items[index];
+                      return HistoryListTile(
+                        item: item,
+                        onDelete: () => context
+                            .read<HistoryCubit>()
+                            .deleteItem(item.historyId),
+                        onTap: () =>
+                            CreateQrRoute($extra: item).push<void>(context),
+                      );
+                    },
+                  ),
                 );
               },
             ),

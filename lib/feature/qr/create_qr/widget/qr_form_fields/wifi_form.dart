@@ -65,10 +65,13 @@ class _WifiFormState extends State<WifiForm> {
         _buildLabel(LocaleKeys.create_qr_fields_encryption.tr()),
         SizedBox(height: context.r(8)),
         SegmentedButton<String>(
-          segments: const [
-            ButtonSegment(value: 'WPA', label: Text('WPA/WPA2')),
-            ButtonSegment(value: 'WEP', label: Text('WEP')),
-            ButtonSegment(value: 'nopass', label: Text('Open')),
+          segments: [
+            const ButtonSegment(value: 'WPA', label: Text('WPA/WPA2')),
+            const ButtonSegment(value: 'WEP', label: Text('WEP')),
+            ButtonSegment(
+              value: 'nopass',
+              label: Text(LocaleKeys.create_qr_fields_wifi_open.tr()),
+            ),
           ],
           selected: {_encryption},
           onSelectionChanged: (v) {

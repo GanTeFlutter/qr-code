@@ -98,7 +98,6 @@ class QrFormView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.locale;
     final cs = Theme.of(context).colorScheme;
 
     return Scaffold(

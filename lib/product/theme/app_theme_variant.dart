@@ -5,44 +5,50 @@ import 'package:flutter/material.dart';
 enum AppThemeVariant {
   purple(
     key: 'purple',
-    label: 'Purple',
+    localeKey: 'theme.purple',
     seedColor: Color(0xFF7C4DFF),
     previewColor: Color(0xFF7C4DFF),
   ),
   blue(
     key: 'blue',
-    label: 'Blue',
+    localeKey: 'theme.blue',
     seedColor: Color(0xFF2196F3),
     previewColor: Color(0xFF2196F3),
   ),
   green(
     key: 'green',
-    label: 'Green',
+    localeKey: 'theme.green',
     seedColor: Color(0xFF4CAF50),
     previewColor: Color(0xFF4CAF50),
   ),
   orange(
     key: 'orange',
-    label: 'Orange',
+    localeKey: 'theme.orange',
     seedColor: Color(0xFFFF9800),
     previewColor: Color(0xFFFF9800),
   ),
   red(
     key: 'red',
-    label: 'Red',
+    localeKey: 'theme.red',
     seedColor: Color(0xFFE91E63),
     previewColor: Color(0xFFE91E63),
+  ),
+  black(
+    key: 'black',
+    localeKey: 'theme.black',
+    seedColor: Color(0xFF263238),
+    previewColor: Color(0xFF37474F),
   );
 
   const AppThemeVariant({
     required this.key,
-    required this.label,
+    required this.localeKey,
     required this.seedColor,
     required this.previewColor,
   });
 
   final String key;
-  final String label;
+  final String localeKey;
   final Color seedColor;
   final Color previewColor;
 
@@ -58,6 +64,6 @@ enum AppThemeVariant {
   static AppThemeVariant fromKey(String key) =>
       AppThemeVariant.values.firstWhere(
         (v) => v.key == key,
-        orElse: () => AppThemeVariant.purple,
+        orElse: () => AppThemeVariant.black,
       );
 }

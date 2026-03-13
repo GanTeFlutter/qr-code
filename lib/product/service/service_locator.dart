@@ -1,8 +1,10 @@
 import 'package:get_it/get_it.dart';
+import 'package:qrcode_akillisletme/feature/qr/history/service/history_service.dart';
 import 'package:qrcode_akillisletme/product/cache/hive_v2/hive_cache.dart';
 import 'package:qrcode_akillisletme/product/cache/product_cache.dart';
 import 'package:qrcode_akillisletme/product/cache/shared_operation/shared_cache.dart';
 import 'package:qrcode_akillisletme/product/service/services/remote_config_service.dart';
+import 'package:qrcode_akillisletme/product/service/services/url_launcher_service.dart';
 
 final GetIt locator = GetIt.instance;
 
@@ -25,11 +27,15 @@ void _registerSingletons() {
     )
     ..registerSingleton<RemoteConfigService>(
       RemoteConfigService.instance,
-    );
+    )
+    ..registerLazySingleton<HistoryService>(HistoryService.new)
+    ..registerSingleton<UrlLauncherService>(UrlLauncherService.instance);
 }
 
 extension ServiceLocator on GetIt {
   SharedCache get sharedCache => locator<SharedCache>();
   ProductCache get productCache => locator<ProductCache>();
   RemoteConfigService get remoteConfigService => locator<RemoteConfigService>();
+  HistoryService get historyService => locator<HistoryService>();
+  UrlLauncherService get urlLauncher => locator<UrlLauncherService>();
 }

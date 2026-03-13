@@ -1,8 +1,9 @@
+import 'package:equatable/equatable.dart';
 import 'package:qrcode_akillisletme/feature/qr/scanner/model/scan_result_type.dart';
 
 enum ScannerStatus { idle, scanned }
 
-class ScannerState {
+class ScannerState extends Equatable {
   const ScannerState({
     this.status = ScannerStatus.idle,
     this.scannedContent = '',
@@ -14,6 +15,9 @@ class ScannerState {
   final String scannedContent;
   final ScanResultType detectedType;
   final bool isPaused;
+
+  @override
+  List<Object?> get props => [status, scannedContent, detectedType, isPaused];
 
   ScannerState copyWith({
     ScannerStatus? status,

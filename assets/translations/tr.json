@@ -24,10 +24,58 @@
     "settings": "Ayarlar",
     "settingsDesc": "Tema, dil ve diğer ayarlar"
   },
+  "theme": {
+    "chooseTheme": "Tema Seçin",
+    "appTheme": "Uygulama Teması",
+    "light": "Açık",
+    "dark": "Koyu",
+    "system": "Sistem",
+    "purple": "Mor",
+    "blue": "Mavi",
+    "green": "Yeşil",
+    "orange": "Turuncu",
+    "red": "Kırmızı",
+    "black": "Siyah"
+  },
+  "language": {
+    "chooseYourLanguage": "Dilinizi Seçin",
+    "selectPreferredLanguage": "Tercih ettiğiniz dili seçin",
+    "continueButton": "Devam"
+  },
+  "onboarding": {
+    "step1Title": "Adım 1",
+    "step2Title": "Hoş Geldiniz!",
+    "step2Desc": "QR kodlarını tarayın, oluşturun ve yönetin — hepsi tek bir uygulamada. Hızlı, kolay ve akıllı.",
+    "step3Title": "Anında Tara",
+    "step3Desc": "Kameranızla QR kodları anında tarayın. Uygulama içeriği otomatik algılar ve doğru işlemi önerir — URL aç, ara, e-posta gönder ve daha fazlası.",
+    "step4Title": "Kolayca Oluştur",
+    "step4Desc": "URL, Wi-Fi, kişi kartı, konum ve daha birçok türde profesyonel QR kodları saniyeler içinde oluşturun.",
+    "step5Title": "Hazırsınız!",
+    "step5Desc": "Her şey hazır. Hemen QR kodlarını taramaya ve oluşturmaya başlayabilirsiniz.",
+    "placeholder": "Buraya içerik ekleyin",
+    "feature_scan": "QR kodları anında tarayın ve akıllı işlemler kullanın",
+    "feature_create": "11 farklı türde QR kod oluşturun",
+    "feature_history": "Tüm tarama ve oluşturma geçmişinizi görün",
+    "customize_feature": "Renkleri, çerçeveleri ve nokta stillerini özelleştirin",
+    "logo_feature": "QR kodunuzun ortasına logo ekleyin",
+    "export_feature": "PNG veya SVG olarak kaydedin ve paylaşın",
+    "tip_history": "Tüm QR kodlarınız geçmişte otomatik kaydedilir",
+    "tip_theme": "5 farklı renk temasından birini seçin",
+    "tip_language": "Dili istediğiniz zaman ayarlardan değiştirebilirsiniz"
+  },
   "settings": {
     "appearance": "Görünüm",
     "language": "Dil",
-    "backgroundAnimation": "Arka Plan Animasyonu"
+    "backgroundAnimation": "Arka Plan Animasyonu",
+    "support": "Destek",
+    "contactUs": "Bize Ulaşın",
+    "rateApp": "Uygulamayı Değerlendir",
+    "shareApp": "Uygulamayı Paylaş",
+    "about": "Hakkında",
+    "aboutTitle": "Hakkında",
+    "legalAndPolicies": "Yasal ve Politikalar",
+    "privacyPolicy": "Gizlilik Politikası",
+    "version": "Sürüm"
   },
   "create_qr": {
     "title": "QR Oluştur",
@@ -120,7 +168,8 @@
       "wallet_address": "Cüzdan Adresi",
       "wallet_hint": "Cüzdan adresini yapıştırın",
       "amount": "Miktar (İsteğe Bağlı)",
-      "save_svg": "SVG Kaydet"
+      "save_svg": "SVG Kaydet",
+      "wifi_open": "Açık"
     }
   },
   "scanner": {
@@ -143,7 +192,8 @@
     "camera_permission_title": "Kamera Izni Gerekli",
     "camera_permission_message": "QR kod taramak icin kamera erisimi gereklidir.",
     "camera_permission_button": "Izin Ver",
-    "scan_success": "QR kod basariyla tarand\u0131"
+    "scan_success": "QR kod basariyla tarand\u0131",
+    "no_qr_found": "QR kod bulunamadı"
   },
   "validation": {
     "invalid_phone": "Geçerli bir telefon numarası girin",

@@ -301,7 +301,7 @@ class _ScannerViewState extends State<ScannerView> {
   void _showNoQrFoundSnackBar() {
     if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('QR kod bulunamadi')),
+      SnackBar(content: Text(LocaleKeys.scanner_no_qr_found.tr())),
     );
   }
 }

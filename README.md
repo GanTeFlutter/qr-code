@@ -104,7 +104,8 @@ feature/<feature>/
 | State Management | `flutter_bloc` (Cubit) + `freezed` |
 | Routing | `go_router` + `TypedGoRoute` (code generation) |
 | DI / Service Locator | `get_it` |
-| Kalici Veri | `hive_ce` (model/liste) + `shared_preferences` (anahtar-deger) |
+| Kalici Veri | `hive_ce` (model/liste) + `s
+hared_preferences` (anahtar-deger) |
 | Lokalizasyon | `easy_localization` (TR / EN) |
 | Tema | Material 3, `ColorScheme.fromSeed()`, 5 renk varyanti |
 | Firebase | `firebase_remote_config` (versiyon kontrolu) |

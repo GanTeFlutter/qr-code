@@ -64,7 +64,17 @@ RouteBase get $homeRoute => GoRouteData.$route(
     GoRouteData.$route(path: 'scanner', factory: $ScannerRoute._fromState),
     GoRouteData.$route(path: 'create-qr', factory: $CreateQrRoute._fromState),
     GoRouteData.$route(path: 'history', factory: $HistoryRoute._fromState),
-    GoRouteData.$route(path: 'settings', factory: $SettingsRoute._fromState),
+    GoRouteData.$route(
+      path: 'settings',
+      factory: $SettingsRoute._fromState,
+      routes: [
+        GoRouteData.$route(path: 'about', factory: $AboutRoute._fromState),
+        GoRouteData.$route(
+          path: 'language',
+          factory: $LanguageSelectionRoute._fromState,
+        ),
+      ],
+    ),
   ],
 );
 
@@ -158,6 +168,47 @@ mixin $SettingsRoute on GoRouteData {
 
   @override
   String get location => GoRouteData.$location('/settings');
+
+  @override
+  void go(BuildContext context) => context.go(location);
+
+  @override
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  @override
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  @override
+  void replace(BuildContext context) => context.replace(location);
+}
+
+mixin $AboutRoute on GoRouteData {
+  static AboutRoute _fromState(GoRouterState state) => const AboutRoute();
+
+  @override
+  String get location => GoRouteData.$location('/settings/about');
+
+  @override
+  void go(BuildContext context) => context.go(location);
+
+  @override
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  @override
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  @override
+  void replace(BuildContext context) => context.replace(location);
+}
+
+mixin $LanguageSelectionRoute on GoRouteData {
+  static LanguageSelectionRoute _fromState(GoRouterState state) =>
+      const LanguageSelectionRoute();
+
+  @override
+  String get location => GoRouteData.$location('/settings/language');
 
   @override
   void go(BuildContext context) => context.go(location);

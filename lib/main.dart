@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,6 +13,7 @@ import 'package:qrcode_akillisletme/product/theme/theme.dart';
 
 void main() async {
   await const ApplicationInit().start();
+  _setupErrorHandling();
   runApp(
     EasyLocalization(
       supportedLocales: CoreLocalize.supportedItems,
@@ -20,6 +23,16 @@ void main() async {
       child: const StateInitialize(child: QrApp()),
     ),
   );
+}
+
+void _setupErrorHandling() {
+  FlutterError.onError = (details) {
+    log(
+      'FlutterError: ${details.exceptionAsString()}',
+      error: details.exception,
+      stackTrace: details.stack,
+    );
+  };
 }
 
 class QrApp extends StatelessWidget {

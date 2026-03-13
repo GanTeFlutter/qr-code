@@ -24,10 +24,58 @@
     "settings": "Settings",
     "settingsDesc": "Theme, language & other settings"
   },
+  "theme": {
+    "chooseTheme": "Choose Theme",
+    "appTheme": "App Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "purple": "Purple",
+    "blue": "Blue",
+    "green": "Green",
+    "orange": "Orange",
+    "red": "Red",
+    "black": "Black"
+  },
+  "language": {
+    "chooseYourLanguage": "Choose Your Language",
+    "selectPreferredLanguage": "Select your preferred language",
+    "continueButton": "Continue"
+  },
+  "onboarding": {
+    "step1Title": "Step 1",
+    "step2Title": "Welcome!",
+    "step2Desc": "Scan, create and manage QR codes — all in one app. Fast, easy and smart.",
+    "step3Title": "Scan Instantly",
+    "step3Desc": "Scan QR codes instantly with your camera. The app auto-detects the content and suggests the right action — open URL, call, send email and more.",
+    "step4Title": "Create Easily",
+    "step4Desc": "Create professional QR codes in seconds — URL, Wi-Fi, contact card, location and many more types.",
+    "step5Title": "You're Ready!",
+    "step5Desc": "Everything is set up. Start scanning and creating QR codes right away.",
+    "placeholder": "Add content here",
+    "feature_scan": "Scan QR codes instantly with smart actions",
+    "feature_create": "Create QR codes in 11 different types",
+    "feature_history": "View all your scan and creation history",
+    "customize_feature": "Customize colors, frames and dot styles",
+    "logo_feature": "Add a logo to the center of your QR code",
+    "export_feature": "Save as PNG or SVG and share",
+    "tip_history": "All your QR codes are automatically saved in history",
+    "tip_theme": "Choose from 5 different color themes",
+    "tip_language": "You can change the language anytime from settings"
+  },
   "settings": {
     "appearance": "Appearance",
     "language": "Language",
-    "backgroundAnimation": "Background Animation"
+    "backgroundAnimation": "Background Animation",
+    "support": "Support",
+    "contactUs": "Contact Us",
+    "rateApp": "Rate App",
+    "shareApp": "Share App",
+    "about": "About",
+    "aboutTitle": "About",
+    "legalAndPolicies": "Legal & Policies",
+    "privacyPolicy": "Privacy Policy",
+    "version": "Version"
   },
   "create_qr": {
     "title": "Create QR",
@@ -120,7 +168,8 @@
       "wallet_address": "Wallet Address",
       "wallet_hint": "Paste wallet address",
       "amount": "Amount (Optional)",
-      "save_svg": "Save SVG"
+      "save_svg": "Save SVG",
+      "wifi_open": "Open"
     }
   },
   "scanner": {
@@ -143,7 +192,8 @@
     "camera_permission_title": "Camera Permission Required",
     "camera_permission_message": "Camera access is required to scan QR codes.",
     "camera_permission_button": "Grant Permission",
-    "scan_success": "QR code scanned successfully"
+    "scan_success": "QR code scanned successfully",
+    "no_qr_found": "No QR code found"
   },
   "validation": {
     "invalid_phone": "Enter a valid phone number",

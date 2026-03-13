@@ -82,16 +82,10 @@ class _QrPreviewWidgetState extends State<QrPreviewWidget> {
         targetHeight: 512,
       );
       final frame = await codec.getNextFrame();
-      debugPrint(
-        '[QrPreview] Logo decode OK: '
-        '${frame.image.width}x${frame.image.height}',
-      );
       if (mounted && widget.centerLogo == bytes) {
         setState(() => _logoImage = frame.image);
       }
-    } on Exception catch (e, stack) {
-      debugPrint('[QrPreview] Logo decode hatasi: $e');
-      debugPrint('[QrPreview] Stack: $stack');
+    } on Exception {
       _lastLogoBytes = null;
     }
   }

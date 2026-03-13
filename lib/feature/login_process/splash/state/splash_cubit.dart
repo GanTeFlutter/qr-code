@@ -1,4 +1,5 @@
-import 'package:flutter/foundation.dart';
+import 'dart:developer';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -25,16 +26,9 @@ class SplashCubit extends Cubit<SplashState> {
       final currentVersion = packageInfo.version;
       final minVersion = _remoteConfigService.minVersion;
 
-      if (kDebugMode) {
-        print('Current Version: $currentVersion');
-        print('Min Version from Firebase: $minVersion');
-      }
+      log('Current: $currentVersion, Min: $minVersion');
 
       final needsUpdate = _isVersionLessThan(currentVersion, minVersion);
-
-      if (kDebugMode) {
-        print('Needs Update: $needsUpdate');
-      }
 
       if (needsUpdate) {
         emit(
@@ -48,9 +42,7 @@ class SplashCubit extends Cubit<SplashState> {
 
       emit(const SplashState.success());
     } on Exception catch (e) {
-      if (kDebugMode) {
-        print('Error during checkApp: $e');
-      }
+      log('SplashCubit.checkApp hatasi: $e');
       emit(SplashState.error(message: 'Bir hata olustu: $e'));
     }
   }

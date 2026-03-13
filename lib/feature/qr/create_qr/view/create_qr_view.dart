@@ -46,7 +46,6 @@ class CreateQrView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.locale;
     final cs = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 

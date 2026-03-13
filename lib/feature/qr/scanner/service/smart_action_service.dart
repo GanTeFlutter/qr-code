@@ -7,6 +7,16 @@ import 'package:url_launcher/url_launcher.dart';
 final class SmartActionService {
   SmartActionService._();
 
+  /// Izin verilen URI scheme'leri — zararli scheme'leri engeller.
+  static const _allowedSchemes = {
+    'http',
+    'https',
+    'tel',
+    'mailto',
+    'sms',
+    'geo',
+  };
+
   /// Tur bazli birincil aksiyonu calistirir.
   static Future<bool> launchAction(
     ScanResultType type,
@@ -29,6 +39,9 @@ final class SmartActionService {
     };
 
     if (uri == null) return false;
+
+    // Guvenlik: sadece izin verilen scheme'leri ac
+    if (!_allowedSchemes.contains(uri.scheme.toLowerCase())) return false;
 
     // canLaunchUrl, Android 11+ package visibility kisitlamasi nedeniyle
     // guvenilmez. Dogrudan launchUrl cagirip hatayi yakaliyoruz.

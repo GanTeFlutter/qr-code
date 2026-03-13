@@ -1,11 +1,15 @@
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:qrcode_akillisletme/product/theme/app_theme_variant.dart';
 
-class ThemeState {
+class ThemeState extends Equatable {
   const ThemeState({required this.variant, required this.themeMode});
 
   final AppThemeVariant variant;
   final ThemeMode themeMode;
+
+  @override
+  List<Object?> get props => [variant, themeMode];
 
   ThemeState copyWith({AppThemeVariant? variant, ThemeMode? themeMode}) {
     return ThemeState(

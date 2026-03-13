@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:qrcode_akillisletme/feature/qr/create_qr/model/qr_type.dart';
 
@@ -9,7 +10,7 @@ enum FrameStyle { none, solid, rounded, dashed, shadow, elegant }
 
 enum CreateQrStatus { idle, generating, generated, saving, saved, error }
 
-class CreateQrState {
+class CreateQrState extends Equatable {
   const CreateQrState({
     this.selectedType,
     this.formData = const {},
@@ -35,6 +36,21 @@ class CreateQrState {
   final Uint8List? centerLogo;
   final bool isFormValid;
   final CreateQrStatus status;
+
+  @override
+  List<Object?> get props => [
+        selectedType,
+        formData,
+        validationErrors,
+        qrContent,
+        fgColor,
+        bgColor,
+        dotStyle,
+        frameStyle,
+        centerLogo,
+        isFormValid,
+        status,
+      ];
 
   CreateQrState copyWith({
     QrType? selectedType,

@@ -5,9 +5,11 @@ import 'package:qrcode_akillisletme/feature/qr/scanner/state/scanner_state.dart'
 import 'package:qrcode_akillisletme/product/enum/history_source.dart';
 
 class ScannerCubit extends Cubit<ScannerState> {
-  ScannerCubit() : super(const ScannerState());
+  ScannerCubit({required HistoryService historyService})
+      : _historyService = historyService,
+        super(const ScannerState());
 
-  final _historyService = HistoryService();
+  final HistoryService _historyService;
 
   /// Barkod/QR tespit edildiginde cagirilir.
   void onBarcodeDetected(String content) {

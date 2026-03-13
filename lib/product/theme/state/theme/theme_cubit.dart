@@ -11,7 +11,7 @@ class ThemeCubit extends Cubit<ThemeState> {
   ThemeCubit()
       : super(
           const ThemeState(
-            variant: AppThemeVariant.purple,
+            variant: AppThemeVariant.black,
             themeMode: ThemeMode.system,
           ),
         ) {

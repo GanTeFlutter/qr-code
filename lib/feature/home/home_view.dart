@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:qrcode_akillisletme/feature/home/home_view_mode.dart';
 import 'package:qrcode_akillisletme/feature/home/widget/home_menu_card.dart';
 import 'package:qrcode_akillisletme/product/init/language/locale_keys.g.dart';
 import 'package:qrcode_akillisletme/product/navigation/app_router.dart';
@@ -13,7 +12,7 @@ class HomeView extends StatefulWidget {
   State<HomeView> createState() => _HomeViewState();
 }
 
-class _HomeViewState extends HomeViewMode {
+class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
